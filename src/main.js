@@ -1,4 +1,6 @@
 
+import { getWeatherByCity } from './appService.js';
+
 const viewElems = {};
 
 const getElemDOM = id => {
@@ -31,6 +33,12 @@ const initializeApp = () => {
 }
 
 const onClickSubmit = () => {};
-const onEnterSubmit = () => {};
+const onEnterSubmit = event => {
+    if (event.key === 'Enter') {
+        let query = viewElems.searchInput.value;
+        getWeatherByCity(query).then(data =>
+            console.log(data));
+    }
+};
 
 document.addEventListener('DOMContentLoaded', initializeApp);

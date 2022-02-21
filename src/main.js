@@ -14,7 +14,7 @@ class WeatherApp {
     }
 
     connectDOMElements = () => {
-        const listOfIds = Array.from(document.querySelectorAll('[id')).map(elem => elem.id);
+        const listOfIds = Array.from(document.querySelectorAll('[id]')).map(elem => elem.id);
         this.viewElems = mapListToDOMElements(listOfIds);
     }
 

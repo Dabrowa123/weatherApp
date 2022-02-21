@@ -29,9 +29,12 @@ class WeatherApp {
             // this.fadeInOut();
             let query = this.viewElems.searchInput.value;
             getWeatherByCity(query).then(data => {
+                this.viewElems.searchInput.style.borderColor = 'black';
                 this.displayWeatherData(data);            
+                this.switchView();
+            }).catch(() => {
+                this.viewElems.searchInput.style.borderColor = 'red';
             });
-            this.switchView();
         }
     }
 
